@@ -1,0 +1,10 @@
+<div class="alert alert-danger" *ngFor="let error of errors">
+  {{error || 'Se ha producido un error'}}
+</div>
+<h1 class="col-sm-12">List of dishes</h1>
+<div class="dishes-row col-sm-12" *ngIf="dishes">
+  <div class="dish-container" *ngFor="let dish of dishes">
+    <a [routerLink]="['dish', dish._id]"><h3>{{dish.name}}</h3></a>
+    <img class="img-thumbnail" [src]="dish.image" onError="this.src='http://higashi-asaichi.jp/wp-content/uploads/2017/12/noimage-1-1024x683.png'" />
+  </div>
+</div>

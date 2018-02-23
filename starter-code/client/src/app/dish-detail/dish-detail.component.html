@@ -1,0 +1,30 @@
+<div class="alert alert-danger" *ngFor="let error of errors">
+  {{error || 'Se ha producido un error'}}
+</div>
+<div class="alert alert-success" *ngIf="message">
+  {{message}}
+</div>
+
+<h1 class="col-sm-12">{{dish?.name}}</h1>
+<div class="col-sm-12 detail-content" *ngIf="dish">
+  <img class="img-thumbnail col-sm-4" [src]="dish.image" onError="this.src='http://higashi-asaichi.jp/wp-content/uploads/2017/12/noimage-1-1024x683.png'" />
+  <div class="col-sm-8">
+    <p>{{dish?.description}}</p>
+    <div *ngFor="let ingredient of dish.ingredients">
+      {{ingredient.ingredientId.name}} x{{ingredient.quantity}}
+    </div>
+  </div>
+</div>
+
+<a [routerLink]="['']"><h3 class="col-sm-12">Back to list</h3></a>
+
+<h1 class="col-sm-12">Ingredients</h1>
+<div class="row col-sm-12 ingredient-container" *ngFor="let ingredient of ingredients">
+  <h3 class="col-sm-4">{{ingredient.name}}</h3>
+  <div class="col-sm-8 ingredient-container">
+    <button class="btn btn-default" (click)="addIngredient(ingredient._id, elem.value)">+</button>
+    <div class="form-group" [ngClass]="{'has-error': errorQuantityInput && errorQuantityInput == ingredient._id}">
+      <input type="number" min="1" class="inline form-control" value="1" #elem (keyup)="0">
+    </div>
+  </div>
+</div>

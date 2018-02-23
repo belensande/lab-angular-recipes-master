@@ -1,0 +1,25 @@
+.dish-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  width: 40%;
+}
+
+.dish-container > img {
+  object-fit: cover;
+  object-position: center;
+  height: 300px;
+  width: 100%;
+}
+
+.dish-container * {
+  margin-bottom: 20px;
+}
+
+.dishes-row {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}

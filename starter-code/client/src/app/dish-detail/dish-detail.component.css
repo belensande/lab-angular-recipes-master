@@ -1,0 +1,21 @@
+img {
+  height: auto;
+}
+
+.detail-content {
+  margin-top: 20px;
+}
+
+.inline {
+  width: auto;
+  display: inline-block;
+}
+
+.ingredient-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.ingredient-container > .form-group {
+  margin-left:5px;
+}
